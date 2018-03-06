@@ -4,7 +4,8 @@
 // ======================
 
 var rover = {
-	direction : "N"
+	direction : "N",
+	position : [x, y]
 }
 
 function turnLeft(rover){
@@ -54,31 +55,18 @@ function turnRight(rover){
         rover.direction = "N";
         console.log("turnRight was called! And Rover direction is " + rover.direction)
     break;
-    
-};
- 
-}
+    }
+ }
 
 function moveForward(rover){
-  console.log("moveForward was called")
-}
+	var x=0; 
+	var y=0;
 
-// switch(rover.direction){
+	if (rover.direction == "E" && y <= 9) {
+		y=y+1;
+	
+  	console.log ("moveForward was called and rover is in " + rover.position);
+ 	}
+ }
 
-// 	case(rover.direction==="N" )
-// 	rover.direction="W";
-// 	break;
 
-// 	case(rover.direction==="W" && turnLeft===true || rover.direction==="E" && turnRight===true):
-// 	rover.direction="S";
-// 	break;
-
-// 	case(rover.direction==="S" && turnLeft===true || rover.direction==="N" && turnRight===true):
-// 	rover.direction="E";
-// 	break;
-
-// 	case(rover.direction==="E" && turnLeft===true || rover.direction==="W" && turnRight===true):
-// 	rover.direction="N";
-// 	break;
-
-// }		
