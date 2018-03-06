@@ -102,7 +102,7 @@ function commands(comandos){
 			turnLeft(rover)
 		}
 
-
+s
 		else if(comandos.length==="F"){
 
 			moveForward(rover)
