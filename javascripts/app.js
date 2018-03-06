@@ -5,7 +5,9 @@
 
 var rover = {
 	direction : "N",
-	position : [x, y]
+	position :[0,0], 
+	x:0,
+	y:0
 }
 
 function turnLeft(rover){
@@ -59,14 +61,55 @@ function turnRight(rover){
  }
 
 function moveForward(rover){
-	var x=0; 
-	var y=0;
-
-	if (rover.direction == "E" && y <= 9) {
-		y=y+1;
 	
+
+	if (rover.direction == "E" /*&& rover.position<=[0,9]*/) {
+
+	rover.x=rover.x+1;
+	rover.position.splice(1,1,rover.x);
   	console.log ("moveForward was called and rover is in " + rover.position);
+
+ 	}
+
+ 	if (rover.direction == "S" /*&& rover.position<=[0,9]*/) {
+
+	rover.y=rover.y+1;
+	rover.position.splice(0,1,rover.y);
+  	console.log ("moveForward was called and rover is in " + rover.position);
+
+ 	}
+
+ 	if (rover.direction == "W" /*&& rover.position<=[0,9]*/) {
+
+	rover.x=rover.x-1;
+	rover.position.splice(0,1,rover.x);
+  	console.log ("moveForward was called and rover is in " + rover.position);
+
  	}
  }
 
+function commands(comandos){
+
+	for(var i=0; i>comandos.length; i++){
+
+		if(comandos.length==="R"){
+
+			turnRight(rover)
+		}
+
+		else if(comandos.length==="L"){
+
+			turnLeft(rover)
+		}
+
+
+		else if(comandos.length==="F"){
+
+			moveForward(rover)
+		}
+
+	}
+
+
+}
 
