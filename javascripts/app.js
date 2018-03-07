@@ -94,18 +94,18 @@ function commands(comandos){
 
 		if(comandos.length==="R"){
 
-			turnRight(rover)
+			turnRight()
 		}
 
 		else if(comandos.length==="L"){
 
-			turnLeft(rover)
+			turnLeft()
 		}
 
-s
+
 		else if(comandos.length==="F"){
 
-			moveForward(rover)
+			moveForward()
 		}
 
 	}
