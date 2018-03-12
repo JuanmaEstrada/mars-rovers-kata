@@ -6,6 +6,7 @@
 var rover = {
 	direction : "N",
 	position :[0,0], 
+	comandos:[],
 	x:0,
 	y:0
 }
@@ -71,7 +72,7 @@ function moveForward(rover){
 
  	}
 
- 	if (rover.direction == "S" /*&& rover.position<=[0,9]*/) {
+ 	else if (rover.direction == "S" /*&& rover.position<=[0,9]*/) {
 
 	rover.y=rover.y+1;
 	rover.position.splice(0,1,rover.y);
@@ -79,37 +80,46 @@ function moveForward(rover){
 
  	}
 
- 	if (rover.direction == "W" /*&& rover.position<=[0,9]*/) {
+ 	else if (rover.direction == "W" /*&& rover.position<=[0,9]*/) {
 
 	rover.x=rover.x-1;
 	rover.position.splice(0,1,rover.x);
   	console.log ("moveForward was called and rover is in " + rover.position);
 
  	}
+	else if (rover.direction == "N" /*&& rover.position>[0,0]*/) {
+
+	rover.y=rover.y-1;
+	rover.position.splice(0,1,rover.y);
+  	console.log ("moveForward was called and rover is in " + rover.position);
+
+ 	}
+
  }
 
 function commands(comandos){
 
-	for(var i=0; i>comandos.length; i++){
+	for(var i=0; i<comandos.length; i++){
 
-		if(comandos.length==="R"){
+		if(comandos[i]==="R"){
 
-			turnRight()
+			turnRight(rover);
+
 		}
 
-		else if(comandos.length==="L"){
+		else if(comandos[i]==="L"){
 
-			turnLeft()
+			turnLeft(rover)
 		}
 
 
-		else if(comandos.length==="F"){
+		else if(comandos[i]==="F"){
 
-			moveForward()
+			moveForward(rover)
 		}
 
-	}
+	
 
-
+}
 }
 
