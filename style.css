@@ -1,0 +1,16 @@
+img{
+
+width: 100%;
+
+}
+
+body{
+	background-image: url("https://mars.nasa.gov/system/downloadable_items/35342_msl20110519_PIA14156.jpg");
+	background-size: 100%;
+}
+.brujula{
+
+	width: 300px;
+	float: right;
+	margin-top: -90px;
+}
