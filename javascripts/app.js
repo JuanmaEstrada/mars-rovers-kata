@@ -6,6 +6,8 @@
 var rover = {
 	direction : "N",
 	position :[0,0],
+	objectX:2,
+	objectY:1,
 	x:0,
 	y:0,
 	cont:0,
@@ -65,12 +67,13 @@ function turnRight(rover){
 
 function moveForward(rover){
 	
-		
+	if (rover.direction == "E" && rover.x<=8 && rover.x>=0 ) {
 
-	if (rover.direction == "E" && rover.x<=8 && rover.x>=0) {
 	rover.traveLog.push(rover.position);//Historial de movientos pero no funciona bien
+	
+
 	rover.x=rover.x+1;
-	rover.position.splice(1,1,rover.x);
+	rover.position.splice(1,1,rover.x );
   	console.log ("moveForward was called and rover is in " + rover.position);
   	console.log ("History for rover " + rover.traveLog);
 
